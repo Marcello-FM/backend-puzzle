@@ -17,7 +17,7 @@ const pool = new Pool({
 app.get('/api/leaderboard', async (req, res) => {
     try {
         const result = await pool.query(
-            'SELECT player_name, score, level_reached, played_at FROM leaderboard ORDER BY score DESC LIMIT 10'
+            'SELECT player_name, score, level_reached, played_at FROM leaderboard ORDER BY score DESC'
         );
         res.json(result.rows);
     } catch (err) {
